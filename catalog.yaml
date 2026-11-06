@@ -1,0 +1,65 @@
+# catalog.yaml — secrets
+# Engineering Intelligence & Release Governance Platform
+# Schema version: 1.1 | Last updated: 2026-11-05
+
+app_id: secrets
+name: Secrets Library
+description: >
+  Librería npm multi-backend para carga de secretos en los microservicios Node.js
+  de Smart Sale. Publicada como @smdv/secrets. Soporta AWS Secrets Manager
+  (entornos dev/staging/prod) y OpenBao/Vault KV v2 (entorno local).
+  Selecciona el proveedor por NODE_ENV; construye los paths usando APP_ENV.
+type: lib
+status: active
+
+ownership:
+  squad: platform
+  owner_team: core
+
+stack:
+  framework: node
+  runtime: node
+  language: typescript
+  version:
+    runtime: "18.x"
+    framework: null
+
+repository:
+  provider: github
+  name: secrets
+  branch_default: master
+
+deployment:
+  type: npm
+  package_name: "@smdv/secrets"
+  package_version: "1.0.0"
+
+communication:
+  http_clients: []
+  kafka_producer: []
+  kafka_consumer: []
+
+  shared:
+    mysql: false
+    redis: false
+    kafka: false
+    dynamodb: false
+
+health_profile:
+  last_reviewed: "2026-11-05"
+  reviewer: jhernandez
+
+  technical_debt:
+    level: low
+    notes: >
+      v1.0.0 inicial. Cubre AWS y OpenBao. Fetch nativo Node 18+.
+
+  test_coverage:
+    current_pct: 100
+    new_code_target_pct: 85
+    has_unit_tests: true
+    has_integration_tests: false
+
+  documentation:
+    has_readme: true
+    has_adr: false

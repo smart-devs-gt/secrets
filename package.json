@@ -1,0 +1,44 @@
+{
+  "name": "@smdv/secrets",
+  "version": "1.0.1",
+  "description": "Multi-backend secrets provider for Smart Sale microservices. Supports AWS Secrets Manager (default) and OpenBao (NODE_ENV=local).",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "pack": "npm pack",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "secrets",
+    "aws",
+    "openbao",
+    "vault",
+    "microservices",
+    "smart-sale"
+  ],
+  "author": "Juan Jose Hernandez <hola@smartdevs.com.gt>",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.523.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.8",
+    "@types/node": "^24.5.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
